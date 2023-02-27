@@ -165,6 +165,10 @@ const serviceEntityPage = (
     <EntityLayout.Route path="/docs" title="Docs">
       {techdocsContent}
     </EntityLayout.Route>
+
+      <EntityLayout.Route path="/github-actions" title="GitHub Actions">
+          <EntityGithubActionsContent />
+      </EntityLayout.Route>
   </EntityLayout>
 );
 
