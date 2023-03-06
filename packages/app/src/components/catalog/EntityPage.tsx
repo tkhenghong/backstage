@@ -55,6 +55,10 @@ import {
 
 import { TechDocsAddons } from '@backstage/plugin-techdocs-react';
 import { ReportIssue } from '@backstage/plugin-techdocs-module-addons-contrib';
+import {
+    EntityGithubPullRequestsContent,
+    EntityGithubPullRequestsOverviewCard
+} from "@roadiehq/backstage-plugin-github-pull-requests";
 
 const techdocsContent = (
   <EntityTechdocsContent>
@@ -127,6 +131,9 @@ const overviewContent = (
     <Grid item md={8} xs={12}>
       <EntityHasSubcomponentsCard variant="gridItem" />
     </Grid>
+      <Grid item md={6}>
+          <EntityGithubPullRequestsOverviewCard />
+      </Grid>
   </Grid>
 );
 
@@ -168,6 +175,10 @@ const serviceEntityPage = (
 
       <EntityLayout.Route path="/github-actions" title="GitHub Actions">
           <EntityGithubActionsContent />
+      </EntityLayout.Route>
+
+      <EntityLayout.Route path="/pull-requests" title="Pull Requests">
+          <EntityGithubPullRequestsContent />
       </EntityLayout.Route>
   </EntityLayout>
 );
