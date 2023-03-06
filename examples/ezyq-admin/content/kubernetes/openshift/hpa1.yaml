@@ -1,0 +1,25 @@
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: mbb-dashboard
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: mbb-dashboard
+  minReplicas: 3
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 40
+
+
+# https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/
+# load test
+# oc -n docker-security run -i --tty load-generator --rm --image=docker.io/busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://mbb-dashboard:8080; done"
+# oc -n docker-security delete po load-generator
+

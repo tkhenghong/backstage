@@ -1,0 +1,74 @@
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mbb-dashboard
+  # namespace: prod
+  labels:
+    app: mbb-dashboard
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mbb-dashboard
+  template:
+    metadata:
+      labels:
+        app: mbb-dashboard
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: kubernetes.io/hostname
+                operator: In
+                values:
+                - worker1.ocp4.maybank.com
+                # - worker2.ocp4.maybank.com
+      imagePullSecrets:
+      - name: regcred
+      containers:
+      - name: reacttest
+        image: ghcr.io/tkhenghong/ezq-admin-frontend:v1.0.0
+        ports:
+        - containerPort: 80
+        # https://stackoverflow.com/questions/61771351/kubernetes-not-updates-docker-image-on-redeployment
+        imagePullPolicy: Always #this is neededed to ensure a new image will be pull from registry during the pod restart
+        # below settings is for hpa test
+        resources:
+          limits:
+            cpu: 10m
+          requests:
+            cpu: 5m
+        # # below settings is for worker node test
+        # resources:
+        #   limits:
+        #     cpu: 2
+        #   requests:
+        #     cpu: 2
+        
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: mbb-dashboard
+spec:
+  # type: NodePort
+  # type: LoadBalancer
+  type: ClusterIP
+  selector:
+    app: mbb-dashboard
+  ports:
+      # By default and for convenience, the `targetPort` is set to the same value as the `port` field.
+    # - port: 80
+    #   targetPort: 80
+    - port: 8080
+      targetPort: 8080
+      # Optional field
+      # By default and for convenience, the Kubernetes control plane will allocate a port from a range (default: 30000-32767)
+      # nodePort: 30007
+        

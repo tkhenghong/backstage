@@ -1,0 +1,6 @@
+// Here you can add other styles
+
+// Hide caret in dropdown CDropdownToggle buttons
+.dropdown-toggle::after {
+  display: none !important;
+}
