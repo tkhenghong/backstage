@@ -11,10 +11,10 @@ RUN yarn build
 # FROM nginx:stable-alpine
 # FROM nginx:1.20.1-alpine
 # non root nginx. openshift does not allow running container as root
-FROM nginxinc/nginx-unprivileged:1.23-alpine
+# FROM nginxinc/nginx-unprivileged:1.23-alpine
+FROM nginxinc/nginx-unprivileged:1.23.3-alpine
 # RUN apk update && apk upgrade
 COPY --from=build /app/build /usr/share/nginx/html
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
-
 

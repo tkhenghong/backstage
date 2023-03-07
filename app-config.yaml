@@ -3,7 +3,7 @@ app:
   baseUrl: http://localhost:3000
 
 organization:
-  name: My Company
+  name: MAP
 
 backend:
   # Used for enabling authentication, secret is shared by all backend plugins
@@ -76,7 +76,7 @@ auth:
         clientSecret: 1742d0a8fe270e3060699e784f6f681ff88cb266
 
 scaffolder:
-  # see https://backstage.io/docs/features/software-templates/configuration for software template options
+# see https://backstage.io/docs/features/software-templates/configuration for software template options
 
 catalog:
   import:
@@ -92,6 +92,12 @@ catalog:
     # Local example template
     - type: file
       target: ../../examples/template/template.yaml
+      rules:
+        - allow: [Template]
+
+    # Example EzyQ Admin template
+    - type: file
+      target: ../../examples/ezyq-admin/template.yaml
       rules:
         - allow: [Template]
 

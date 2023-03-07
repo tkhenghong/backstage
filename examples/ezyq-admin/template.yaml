@@ -6,7 +6,7 @@ metadata:
   title: Maybank EzyQ Admin Template
   description: An example template that is based on EzyQ Admin frontend module
 spec:
-  owner: user:developer
+  owner: group:developer
   type: service
 
   # These parameters are used to generate the input form in the frontend, and are
@@ -46,6 +46,25 @@ spec:
         url: ./content
         values:
           name: ${{ parameters.name }}
+
+    - name: Write Catalog information
+      action: catalog:write
+      input:
+        component:
+          apiVersion: 'backstage.io/v1alpha1'
+          kind: Component
+          metadata:
+            name: ${{ parameters.name }}
+            links:
+              - url: https://dashboard.example.com
+                title: Test Backstage Dashboard
+                icon: dashboard
+            annotations:
+              github.com/project-slug: ${{ parameters.repoUrl | projectSlug }}
+          spec:
+            type: service
+            lifecycle: experimental
+            owner: ${{ parameters.owner }}
 
     # This step publishes the contents of the working directory to GitHub.
     - id: publish

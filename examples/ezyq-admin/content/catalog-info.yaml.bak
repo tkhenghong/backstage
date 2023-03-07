@@ -7,7 +7,7 @@ metadata:
       title: Test Backstage Dashboard
       icon: dashboard
   annotations:
-    github.com/project-slug: ${{ values.owner | dump }}/${{ values.name | dump }}
+    github.com/project-slug: ${{ values.owner }}/${{ values.name }}
     backstage.io/techdocs-ref: dir:.
 
 spec:

@@ -16,7 +16,7 @@
 #               number: 8080
 #         path: /
 #         pathType: Exact
-        
+
 ---
 apiVersion: route.openshift.io/v1
 kind: Route
