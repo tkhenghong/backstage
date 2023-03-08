@@ -1,8 +1,8 @@
 name: Publish Docker image to multiple registry with multistage
 
 on:
-  release:
-    types: [published]
+#  release:
+#    types: [published]
 
   push:
     # branches:
