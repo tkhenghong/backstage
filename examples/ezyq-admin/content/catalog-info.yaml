@@ -1,0 +1,16 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ${{ values.name | dump }}
+  links:
+    - url: https://dashboard.example.com
+      title: Test Backstage Dashboard
+      icon: dashboard
+  annotations:
+    github.com/project-slug: TKH-Maybank-Organization/${{ values.name }}
+    backstage.io/techdocs-ref: dir:.
+
+spec:
+  type: service
+  owner: group:developer
+  lifecycle: experimental
