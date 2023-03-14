@@ -4,7 +4,7 @@ metadata:
   name: ${{ values.name | dump }}
   links:
     - url: https://dashboard.example.com
-      title: Test Backstage Dashboard
+      title: Test DEVx Dashboard
       icon: dashboard
   annotations:
     github.com/project-slug: TKH-Maybank-Organization/${{ values.name }}

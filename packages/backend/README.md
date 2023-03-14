@@ -1,8 +1,8 @@
 # example-backend
 
-This package is an EXAMPLE of a Backstage backend.
+This package is an EXAMPLE of a DEVx backend.
 
-The main purpose of this package is to provide a test bed for Backstage plugins
+The main purpose of this package is to provide a test bed for DEVx plugins
 that have a backend part. Feel free to experiment locally or within your fork by
 adding dependencies and routes to this backend, to try things out.
 

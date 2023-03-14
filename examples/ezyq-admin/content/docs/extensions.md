@@ -1,6 +1,6 @@
 # Plugins & Extensions
 
-Just by including the TechDocs Core Plugin to your MkDocs site included with Backstage,
+Just by including the TechDocs Core Plugin to your MkDocs site included with DEVx,
 you gain the immediate use of a variety of popular plugins and extensions to MkDocs.
 
 For more information and full details of the available features, see the

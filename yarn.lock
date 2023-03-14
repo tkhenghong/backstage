@@ -3166,6 +3166,21 @@
     yn "^4.0.0"
     yup "^0.32.9"
 
+"@backstage/plugin-scaffolder-backend-module-rails@^0.4.10":
+  version "0.4.10"
+  resolved "https://registry.yarnpkg.com/@backstage/plugin-scaffolder-backend-module-rails/-/plugin-scaffolder-backend-module-rails-0.4.10.tgz#e16c4a47926ead9ce9307e5683cd42b64d575c00"
+  integrity sha512-o12tZbN58hwa+dK4B4VZ3Dls/xaYA86oqCY6Ru+7hgP/r9w22rL6xHZvtBpoSA6e52XTvJdekCW1TeSE4GIQPQ==
+  dependencies:
+    "@backstage/backend-common" "^0.18.2"
+    "@backstage/config" "^1.0.6"
+    "@backstage/errors" "^1.1.4"
+    "@backstage/integration" "^1.4.2"
+    "@backstage/plugin-scaffolder-backend" "^1.11.0"
+    "@backstage/plugin-scaffolder-node" "^0.1.0"
+    "@backstage/types" "^1.0.2"
+    command-exists "^1.2.9"
+    fs-extra "^10.0.1"
+
 "@backstage/plugin-scaffolder-backend@^1.11.0":
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/@backstage/plugin-scaffolder-backend/-/plugin-scaffolder-backend-1.11.0.tgz#2c4ce5a9a2225249cdf8cdb377cf50aac220a487"
@@ -11673,7 +11688,7 @@ fs-constants@^1.0.0:
   resolved "https://registry.yarnpkg.com/fs-constants/-/fs-constants-1.0.0.tgz#6be0de9be998ce16af8afc24497b9ee9b7ccd9ad"
   integrity sha512-y6OAwoSIf7FyjMIv94u+b5rdheZEjzR63GTyZJm5qh4Bi+2YgwLCcI/fPFZkL5PSixOt6ZNKm+w+Hfp/Bciwow==
 
-fs-extra@10.1.0, fs-extra@^10.0.0:
+fs-extra@10.1.0, fs-extra@^10.0.0, fs-extra@^10.0.1:
   version "10.1.0"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-10.1.0.tgz#02873cfbc4084dde127eaa5f9905eef2325d1abf"
   integrity sha512-oRXApq54ETRj4eMiFzGnHWGy+zo5raudjuxN0b8H7s/RU2oW0Wvsx9O0ACRN/kRq9E8Vu/ReskGB5o3ji+FzHQ==

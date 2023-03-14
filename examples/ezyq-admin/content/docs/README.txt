@@ -1,1 +1,1 @@
-Required directory for loading default technical documentations in Backstage.
+Required directory for loading default technical documentations in DEVx.
